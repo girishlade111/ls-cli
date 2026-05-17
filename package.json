@@ -2,15 +2,15 @@
   "name": "ladestack",
   "version": "0.1.0",
   "description": "LS CLI - A CLI tool for the LadeStack brand",
-  "main": "bin/index.js",
+  "main": "dist/index.js",
   "bin": {
-    "ladestack": "bin/index.js"
+    "ladestack": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "node bin/index.js",
-    "clean": "rm -rf bin"
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
   },
   "keywords": [
     "cli",

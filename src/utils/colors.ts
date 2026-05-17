@@ -1,0 +1,15 @@
+export const colors = {
+  primary: "#00D4AA",
+  secondary: "#7B61FF",
+  accent: "#FF6B6B",
+  gold: "#FFD700",
+  silver: "#C0C0C0",
+  bronze: "#CD7F32",
+  steel: "#71797E",
+  platinum: "#E5E4E2",
+  text: "#FFFFFF",
+  muted: "#8892B0",
+  success: "#00E676",
+  error: "#FF5252",
+  warning: "#FFAB40",
+} as const;
