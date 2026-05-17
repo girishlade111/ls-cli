@@ -1,15 +1,24 @@
-import React from "react";
-import { Text } from "ink";
-import InkSpinner from "ink-spinner";
+import React, { useState, useEffect } from 'react';
+import { Text } from 'ink';
 
-interface SpinnerProps {
-  label?: string;
-}
+const SPINNER_FRAMES = ['|', '/', '-', '\\'];
 
-export const Spinner: React.FC<SpinnerProps> = ({ label = "Processing..." }) => {
+const Spinner: React.FC<{ label?: string }> = ({ label = 'Loading' }) => {
+  const [frame, setFrame] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFrame(f => (f + 1) % SPINNER_FRAMES.length);
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Text>
-      <InkSpinner type="dots" /> {label}
+      {label} {SPINNER_FRAMES[frame]}
     </Text>
   );
 };
+
+export default Spinner;

@@ -1,7 +1,3 @@
-export const docCommand = {
-  name: "doc",
-  description: "Generate documents using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement document generation
-  },
+export const handleDoc = async (args: string[]) => {
+  console.log('Document command:', args);
 };

@@ -1,7 +1,3 @@
-export const sheetCommand = {
-  name: "sheet",
-  description: "Generate spreadsheets using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement spreadsheet generation
-  },
+export const handleSheet = async (args: string[]) => {
+  console.log('Sheet command:', args);
 };

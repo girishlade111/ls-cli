@@ -1,21 +1,28 @@
-import React from "react";
-import { Text, Box } from "ink";
+import React from 'react';
+import { Box, Text } from 'ink';
 
-interface CommandDropdownProps {
-  commands: string[];
-  onSelect: (command: string) => void;
-}
+const COMMANDS = [
+  '/doc',
+  '/sheet',
+  '/pptx',
+  '/research',
+  '/resume',
+  '/invoice',
+  '/build',
+  '/coding',
+  '/design',
+  '/system'
+];
 
-export const CommandDropdown: React.FC<CommandDropdownProps> = ({
-  commands,
-  onSelect,
-}) => {
+const CommandDropdown: React.FC = () => {
   return (
-    <Box flexDirection="column" borderStyle="round" padding={1}>
-      <Text bold>Available Commands:</Text>
-      {commands.map((cmd) => (
-        <Text key={cmd}>/{cmd}</Text>
+    <Box flexDirection="column" marginY={1}>
+      <Text bold underline>Available Commands:</Text>
+      {COMMANDS.map(cmd => (
+        <Text key={cmd}>&gt; {cmd}</Text>
       ))}
     </Box>
   );
 };
+
+export default CommandDropdown;
