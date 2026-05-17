@@ -8,5 +8,5 @@ export const PERSONAS = {
   build: 'You are a project builder...',
   coding: 'You are a coding assistant...',
   design: 'You are a design expert...',
-  system: 'You are a system administrator...'
+  system: 'You are a system administrator...',
 };

@@ -13,7 +13,7 @@ export class SessionStore {
       id,
       command,
       data: {},
-      createdAt: Date.now()
+      createdAt: Date.now(),
     };
     this.sessions.set(id, session);
     return session;

@@ -10,7 +10,7 @@ const SplashScreen: React.FC<Props> = ({ onComplete }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDots(d => d.length >= 3 ? '' : d + '.');
+      setDots((d) => (d.length >= 3 ? '' : d + '.'));
     }, 300);
 
     const timeout = setTimeout(() => {
@@ -25,8 +25,15 @@ const SplashScreen: React.FC<Props> = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <Box justifyContent="center" alignItems="center" flexDirection="column" height={10}>
-      <Text bold color="cyan">LS CLI</Text>
+    <Box
+      justifyContent="center"
+      alignItems="center"
+      flexDirection="column"
+      height={10}
+    >
+      <Text bold color="cyan">
+        LS CLI
+      </Text>
       <Text>Loading{dots}</Text>
     </Box>
   );

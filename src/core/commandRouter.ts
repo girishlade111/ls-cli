@@ -2,7 +2,10 @@ type CommandHandler = (args: string[]) => Promise<void>;
 
 const COMMANDS: Record<string, CommandHandler> = {};
 
-export const registerCommand = (name: string, handler: CommandHandler): void => {
+export const registerCommand = (
+  name: string,
+  handler: CommandHandler
+): void => {
   COMMANDS[name] = handler;
 };
 

@@ -8,7 +8,7 @@ const Spinner: React.FC<{ label?: string }> = ({ label = 'Loading' }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFrame(f => (f + 1) % SPINNER_FRAMES.length);
+      setFrame((f) => (f + 1) % SPINNER_FRAMES.length);
     }, 100);
 
     return () => clearInterval(interval);

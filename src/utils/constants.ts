@@ -13,5 +13,5 @@ export const COMMANDS = [
   '/build',
   '/coding',
   '/design',
-  '/system'
+  '/system',
 ];

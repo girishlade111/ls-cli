@@ -8,5 +8,5 @@ export const COLORS = {
   dim: '#888888',
   success: '#4ECDC4',
   error: '#FF6B6B',
-  warning: '#FFE66D'
+  warning: '#FFE66D',
 };
