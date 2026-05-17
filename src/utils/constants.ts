@@ -1,19 +1,17 @@
-export const APP_NAME = "LadeStack CLI";
-export const APP_VERSION = "0.1.0";
-export const APP_DESCRIPTION = "Build smarter, faster with AI-powered tools";
-
-export const DEFAULT_MODEL = "nvidia/llama-3.1-nemotron-70b-instruct";
-export const API_BASE_URL = "https://integrate.api.nvidia.com/v1";
-
+export const APP_NAME = 'LS CLI';
+export const APP_VERSION = '0.1.0';
+export const DEFAULT_SESSION_TIMEOUT = 3600000;
+export const MAX_INPUT_LENGTH = 1000;
+export const WELCOME_MESSAGE = 'Welcome to LS CLI!';
 export const COMMANDS = [
-  "doc",
-  "sheet",
-  "pptx",
-  "research",
-  "resume",
-  "invoice",
-  "build",
-  "coding",
-  "design",
-  "system",
-] as const;
+  '/doc',
+  '/sheet',
+  '/pptx',
+  '/research',
+  '/resume',
+  '/invoice',
+  '/build',
+  '/coding',
+  '/design',
+  '/system'
+];

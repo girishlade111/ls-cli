@@ -1,15 +1,9 @@
-export const formatBox = (text: string, width: number = 60): string => {
-  const border = "\u2500".repeat(width - 2);
-  const lines = text.split("\n");
-  const paddedLines = lines.map((line) => {
-    const padding = Math.max(0, width - 4 - line.length);
-    return `\u2502 ${line}${" ".repeat(padding)} \u2502`;
-  });
+export const formatBold = (text: string): string => `\x1b[1m${text}\x1b[0m`;
+export const formatDim = (text: string): string => `\x1b[2m${text}\x1b[0m`;
+export const formatItalic = (text: string): string => `\x1b[3m${text}\x1b[0m`;
+export const formatUnderline = (text: string): string => `\x1b[4m${text}\x1b[0m`;
 
-  return [`\u250c${border}\u2510`, ...paddedLines, `\u2514${border}\u2518`].join("\n");
-};
-
-export const truncate = (text: string, maxLength: number): string => {
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength - 3) + "...";
+export const padCenter = (text: string, width: number): string => {
+  const padding = Math.max(0, Math.floor((width - text.length) / 2));
+  return ' '.repeat(padding) + text + ' '.repeat(padding);
 };

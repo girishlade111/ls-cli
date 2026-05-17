@@ -1,15 +1,12 @@
-export const colors = {
-  primary: "#00D4AA",
-  secondary: "#7B61FF",
-  accent: "#FF6B6B",
-  gold: "#FFD700",
-  silver: "#C0C0C0",
-  bronze: "#CD7F32",
-  steel: "#71797E",
-  platinum: "#E5E4E2",
-  text: "#FFFFFF",
-  muted: "#8892B0",
-  success: "#00E676",
-  error: "#FF5252",
-  warning: "#FFAB40",
-} as const;
+export const COLORS = {
+  primary: '#00D4FF',
+  secondary: '#FF6B6B',
+  accent: '#4ECDC4',
+  background: '#1A1A2E',
+  surface: '#16213E',
+  text: '#EAEAEA',
+  dim: '#888888',
+  success: '#4ECDC4',
+  error: '#FF6B6B',
+  warning: '#FFE66D'
+};
