@@ -1,0 +1,16 @@
+{
+  "name": "ladestack",
+  "version": "0.1.0",
+  "description": "LS CLI - A CLI tool for the LadeStack brand",
+  "main": "bin/index.js",
+  "bin": {
+    "ladestack": "bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node bin/index.js"
+  },
+  "keywords": ["cli", "ladestack"],
+  "author": "",
+  "license": "MIT"
+}
