@@ -1,8 +1,5 @@
-import { createRequire } from 'node:module';
 import process from 'node:process';
-
-const require = createRequire(import.meta.url);
-const pkg = require('../../package.json');
+import pkg from '../../package.json';
 
 // Environment Configuration
 export const NIM_API_KEY = process.env.NIM_API_KEY || '';
