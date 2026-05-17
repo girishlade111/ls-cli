@@ -1,6 +1,11 @@
 #!/usr/bin/env node
-import React from "react";
-import { render } from "ink";
-import { App } from "./app";
+import React from 'react';
+import { render } from 'ink';
+import App from './app.js';
 
-render(<App />);
+const { unmount } = render(React.createElement(App));
+
+process.on('SIGINT', () => {
+  unmount();
+  process.exit(0);
+});

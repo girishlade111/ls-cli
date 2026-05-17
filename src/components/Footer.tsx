@@ -1,10 +1,12 @@
-import React from "react";
-import { Text, Box } from "ink";
+import React from 'react';
+import { Box, Text } from 'ink';
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   return (
-    <Box borderTop={true} padding={1}>
-      <Text dimColor>LadeStack CLI — Build smarter, faster.</Text>
+    <Box borderStyle="round" borderColor="gray" paddingX={1} marginTop={1}>
+      <Text dimColor>Type a command or press Ctrl+C to exit</Text>
     </Box>
   );
 };
+
+export default Footer;

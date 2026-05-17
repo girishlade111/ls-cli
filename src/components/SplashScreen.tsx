@@ -1,13 +1,35 @@
-import React from "react";
-import { Text, Box } from "ink";
+import React, { useEffect, useState } from 'react';
+import { Box, Text } from 'ink';
 
-export const SplashScreen: React.FC = () => {
+interface Props {
+  onComplete: () => void;
+}
+
+const SplashScreen: React.FC<Props> = ({ onComplete }) => {
+  const [dots, setDots] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDots(d => d.length >= 3 ? '' : d + '.');
+    }, 300);
+
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
+      onComplete();
+    }, 1500);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
+  }, [onComplete]);
+
   return (
-    <Box flexDirection="column" padding={1}>
-      <Text bold color="cyan">
-        ⚡ LadeStack CLI v0.1.0
-      </Text>
-      <Text dimColor>Type /help to see available commands</Text>
+    <Box justifyContent="center" alignItems="center" flexDirection="column" height={10}>
+      <Text bold color="cyan">LS CLI</Text>
+      <Text>Loading{dots}</Text>
     </Box>
   );
 };
+
+export default SplashScreen;
