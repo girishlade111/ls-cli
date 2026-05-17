@@ -1,3 +1,8 @@
+// Environment Configuration
+export const NIM_API_KEY = process.env.NVIDIA_NIM_API_KEY || '';
+export const NIM_MODEL_ID = process.env.NVIDIA_NIM_MODEL_ID || 'meta/llama3-70b-instruct';
+
+// Application Constants
 export const APP_NAME = 'LS CLI';
 export const APP_VERSION = '0.1.0';
 export const DEFAULT_SESSION_TIMEOUT = 3600000;
