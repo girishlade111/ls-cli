@@ -1,7 +1,3 @@
-export const researchCommand = {
-  name: "research",
-  description: "Research topics using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement research
-  },
+export const handleResearch = async (args: string[]) => {
+  console.log('Research command:', args);
 };

@@ -1,7 +1,3 @@
-export const buildCommand = {
-  name: "build",
-  description: "Build projects using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement project building
-  },
+export const handleBuild = async (args: string[]) => {
+  console.log('Build command:', args);
 };

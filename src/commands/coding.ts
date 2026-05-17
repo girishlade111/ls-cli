@@ -1,7 +1,3 @@
-export const codingCommand = {
-  name: "coding",
-  description: "Code generation and assistance using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement coding assistance
-  },
+export const handleCoding = async (args: string[]) => {
+  console.log('Coding command:', args);
 };

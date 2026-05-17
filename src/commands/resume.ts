@@ -1,7 +1,3 @@
-export const resumeCommand = {
-  name: "resume",
-  description: "Generate resumes using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement resume generation
-  },
+export const handleResume = async (args: string[]) => {
+  console.log('Resume command:', args);
 };
