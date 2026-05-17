@@ -1,3 +1,5 @@
+import { randomUUID } from "crypto";
+
 export interface Session {
   id: string;
   command: string;
@@ -9,7 +11,7 @@ export class SessionStore {
   private sessions: Map<string, Session> = new Map();
 
   create(command: string): Session {
-    const id = crypto.randomUUID();
+    const id = randomUUID();
     const session: Session = {
       id,
       command,
