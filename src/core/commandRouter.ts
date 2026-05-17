@@ -1,34 +1,20 @@
-export interface Command {
-  name: string;
-  description: string;
-  handler: (args: string[]) => Promise<void>;
-}
+type CommandHandler = (args: string[]) => Promise<void>;
 
-export class CommandRouter {
-  private commands: Map<string, Command> = new Map();
+const COMMANDS: Record<string, CommandHandler> = {};
 
-  register(command: Command): void {
-    this.commands.set(command.name, command);
+export const registerCommand = (name: string, handler: CommandHandler): void => {
+  COMMANDS[name] = handler;
+};
+
+export const routeCommand = async (input: string): Promise<void> => {
+  const parts = input.trim().split(' ');
+  const cmd = parts[0];
+  const args = parts.slice(1);
+
+  const handler = COMMANDS[cmd];
+  if (handler) {
+    await handler(args);
+  } else {
+    console.log(`Unknown command: ${cmd}`);
   }
-
-  get(name: string): Command | undefined {
-    return this.commands.get(name);
-  }
-
-  list(): Command[] {
-    return Array.from(this.commands.values());
-  }
-
-  async route(input: string): Promise<void> {
-    const parts = input.trim().split(/\s+/);
-    const commandName = parts[0].replace(/^\//, "");
-    const args = parts.slice(1);
-
-    const command = this.commands.get(commandName);
-    if (!command) {
-      throw new Error(`Unknown command: /${commandName}. Type /help for available commands.`);
-    }
-
-    await command.handler(args);
-  }
-}
+};

@@ -1,22 +1,19 @@
-import { randomUUID } from "crypto";
-
-export interface Session {
+interface Session {
   id: string;
   command: string;
-  history: { role: string; content: string }[];
-  createdAt: Date;
+  data: Record<string, unknown>;
+  createdAt: number;
 }
 
 export class SessionStore {
   private sessions: Map<string, Session> = new Map();
 
-  create(command: string): Session {
-    const id = randomUUID();
+  create(id: string, command: string): Session {
     const session: Session = {
       id,
       command,
-      history: [],
-      createdAt: new Date(),
+      data: {},
+      createdAt: Date.now()
     };
     this.sessions.set(id, session);
     return session;
@@ -26,18 +23,18 @@ export class SessionStore {
     return this.sessions.get(id);
   }
 
-  addMessage(sessionId: string, role: string, content: string): void {
-    const session = this.sessions.get(sessionId);
+  update(id: string, data: Record<string, unknown>): void {
+    const session = this.sessions.get(id);
     if (session) {
-      session.history.push({ role, content });
+      session.data = { ...session.data, ...data };
     }
   }
 
-  clear(id: string): void {
+  delete(id: string): void {
     this.sessions.delete(id);
   }
 
-  clearAll(): void {
+  clear(): void {
     this.sessions.clear();
   }
 }
