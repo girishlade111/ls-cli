@@ -1,8 +1,7 @@
-import { BaseAgent, AgentResponse } from "./baseAgent";
+import { BaseAgent } from './baseAgent.js';
 
 export class CodingAgent extends BaseAgent {
-  async execute(prompt: string): Promise<AgentResponse> {
-    // TODO: Implement coding agent
-    return { success: true, data: "" };
+  async generateCode(task: string): Promise<string> {
+    return this.call(task);
   }
 }

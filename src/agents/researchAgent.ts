@@ -1,8 +1,7 @@
-import { BaseAgent, AgentResponse } from "./baseAgent";
+import { BaseAgent } from './baseAgent.js';
 
 export class ResearchAgent extends BaseAgent {
-  async execute(prompt: string): Promise<AgentResponse> {
-    // TODO: Implement research agent
-    return { success: true, data: "" };
+  async search(query: string): Promise<string> {
+    return this.call(query);
   }
 }

@@ -1,8 +1,7 @@
-import { BaseAgent, AgentResponse } from "./baseAgent";
+import { BaseAgent } from './baseAgent.js';
 
 export class DocAgent extends BaseAgent {
-  async execute(prompt: string): Promise<AgentResponse> {
-    // TODO: Implement document generation agent
-    return { success: true, data: "" };
+  async generate(content: string): Promise<string> {
+    return this.call(content);
   }
 }

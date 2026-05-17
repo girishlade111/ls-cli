@@ -1,7 +1,3 @@
-export const designCommand = {
-  name: "design",
-  description: "Generate designs using AI",
-  handler: async (args: string[]) => {
-    // TODO: Implement design generation
-  },
+export const handleDesign = async (args: string[]) => {
+  console.log('Design command:', args);
 };
