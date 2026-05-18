@@ -5,8 +5,10 @@ export default defineConfig({
   format: ['esm'],
   target: 'node18',
   splitting: false,
+  sourcemap: false,
   clean: true,
-  banner: {
-    js: '#!/usr/bin/env node'
-  }
+  minify: false,
+  banner: { js: '#!/usr/bin/env node' },
+  external: ['react', 'ink'],
+  treeshake: true
 });
