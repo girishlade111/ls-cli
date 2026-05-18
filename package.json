@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "tsx src/index.tsx",
     "build": "tsup",
-    "postbuild": "chmod +x dist/index.js",
+    "postbuild": "chmod +x dist/index.js 2>nul || exit 0",
     "start": "node dist/index.js",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write src/",
