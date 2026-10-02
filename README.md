@@ -142,3 +142,7 @@ flowchart TD
 ---
 
 *Built with ❤️ for the LadeStack Ecosystem.*
+
+---
+
+Built by Girish Lade — https://ladestack.in
